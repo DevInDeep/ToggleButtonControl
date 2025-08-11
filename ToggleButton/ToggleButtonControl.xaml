@@ -8,24 +8,28 @@
     x:Name="control"
     d:DesignHeight="50"
     d:DesignWidth="150"
+    PreviewMouseLeftButtonUp="ToggleButton_Click"
     mc:Ignorable="d">
     <UserControl.Resources>
         <local:HalfOfConverter x:Key="halfOfConverter" />
+        <local:CircleConverter x:Key="circleConverter" />
+        <local:BoolToHorizontalAllignementConverter x:Key="boolToHorizontalAlignement" />
     </UserControl.Resources>
     <Grid>
         <Border
             Width="{Binding ElementName=control, Path=Width}"
             Height="{Binding ElementName=control, Path=Height}"
-            BorderBrush="Gray"
-            BorderThickness="1"
-            CornerRadius="{Binding ElementName=control, Path=Height, Converter={StaticResource halfOfConverter}}" />
-
-        <Border
-            Width="{Binding ElementName=control, Path=Height}"
-            Height="{Binding ElementName=control, Path=Height}"
-            Background="DarkGray"
-            BorderBrush="Gray"
-            BorderThickness="1"
-            CornerRadius="{Binding ElementName=control, Path=Height, Converter={StaticResource halfOfConverter}}" />
+            Background="Gray"
+            BorderThickness="0"
+            CornerRadius="{Binding ElementName=control, Path=Height, Converter={StaticResource halfOfConverter}}">
+            <Border
+                Width="{Binding ElementName=control, Path=Height, Converter={StaticResource circleConverter}}"
+                Height="{Binding ElementName=control, Path=Height, Converter={StaticResource circleConverter}}"
+                Margin="3,0,0,0"
+                HorizontalAlignment="{Binding ElementName=control, Path=IsChecked, Converter={StaticResource boolToHorizontalAlignement}}"
+                VerticalAlignment="Center"
+                Background="White"
+                CornerRadius="{Binding ElementName=control, Path=Height, Converter={StaticResource halfOfConverter}}" />
+        </Border>
     </Grid>
 </UserControl>
