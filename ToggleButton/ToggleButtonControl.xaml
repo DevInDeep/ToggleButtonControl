@@ -17,6 +17,7 @@
     </UserControl.Resources>
     <Grid>
         <Border
+            x:Name="background"
             Width="{Binding ElementName=control, Path=Width}"
             Height="{Binding ElementName=control, Path=Height}"
             Background="Gray"

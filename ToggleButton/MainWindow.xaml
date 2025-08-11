@@ -10,6 +10,9 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <local:ToggleButtonControl Width="150" Height="50" />
+        <local:ToggleButtonControl
+            Width="100"
+            Height="50"
+            OnColor="Green" />
     </Grid>
 </Window>

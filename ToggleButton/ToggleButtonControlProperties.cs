@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace ToggleButton
 {
@@ -14,6 +15,18 @@ namespace ToggleButton
         {
             get => (bool)GetValue(IsCheckedProperty);
             set => SetValue(IsCheckedProperty, value);
+        }
+
+        public static readonly DependencyProperty OnColorProperty =
+        DependencyProperty.Register(
+            name: "OnColor",
+            propertyType: typeof(Color),
+            ownerType: typeof(ToggleButtonControl),
+            typeMetadata: new FrameworkPropertyMetadata(defaultValue: Colors.Gray));
+        public Color OnColor
+        {
+            get => (Color)GetValue(OnColorProperty);
+            set => SetValue(OnColorProperty, value);
         }
     }
 }
