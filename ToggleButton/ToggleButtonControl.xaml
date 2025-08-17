@@ -23,14 +23,21 @@
             Background="Gray"
             BorderThickness="0"
             CornerRadius="{Binding ElementName=control, Path=Height, Converter={StaticResource halfOfConverter}}">
-            <Border
-                Width="{Binding ElementName=control, Path=Height, Converter={StaticResource circleConverter}}"
-                Height="{Binding ElementName=control, Path=Height, Converter={StaticResource circleConverter}}"
-                Margin="3,0,3,0"
-                HorizontalAlignment="{Binding ElementName=control, Path=IsChecked, Converter={StaticResource boolToHorizontalAlignement}}"
-                VerticalAlignment="Center"
-                Background="White"
-                CornerRadius="{Binding ElementName=control, Path=Height, Converter={StaticResource halfOfConverter}}" />
+            <Grid>
+                <Border
+                    Width="{Binding ElementName=control, Path=Height, Converter={StaticResource circleConverter}}"
+                    Height="{Binding ElementName=control, Path=Height, Converter={StaticResource circleConverter}}"
+                    Margin="3,0,3,0"
+                    HorizontalAlignment="{Binding ElementName=control, Path=IsChecked, Converter={StaticResource boolToHorizontalAlignement}}"
+                    VerticalAlignment="Center"
+                    Background="White"
+                    CornerRadius="{Binding ElementName=control, Path=Height, Converter={StaticResource halfOfConverter}}" />
+                <TextBlock
+                    Margin="3,0,3,0"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    Text="ON" />
+            </Grid>
         </Border>
     </Grid>
 </UserControl>

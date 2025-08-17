@@ -28,5 +28,29 @@ namespace ToggleButton
             get => (Color)GetValue(OnColorProperty);
             set => SetValue(OnColorProperty, value);
         }
+
+        public static readonly DependencyProperty OnTextProperty =
+        DependencyProperty.Register(
+            name: "OnText",
+            propertyType: typeof(string),
+            ownerType: typeof(ToggleButtonControl),
+            typeMetadata: new FrameworkPropertyMetadata(defaultValue: string.Empty));
+        public string OnText
+        {
+            get => (string)GetValue(OnTextProperty);
+            set => SetValue(OnTextProperty, value);
+        }
+
+        public static readonly DependencyProperty OffTextProperty =
+        DependencyProperty.Register(
+            name: "OffText",
+            propertyType: typeof(string),
+            ownerType: typeof(ToggleButtonControl),
+            typeMetadata: new FrameworkPropertyMetadata(defaultValue: string.Empty));
+        public string OffText
+        {
+            get => (string)GetValue(OffTextProperty);
+            set => SetValue(OffTextProperty, value);
+        }
     }
 }
